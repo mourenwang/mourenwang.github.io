@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    基础数据类型之Number |  南方的雨如你
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-基础数据类型之Number" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  基础数据类型之Number
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/02/09/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BNumber/" class="article-date">
+  <time datetime="2020-02-09T11:40:55.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python3/">Python3</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">934字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p><strong>数字类型离不开数值运算</strong></p>
+<pre><code>print(5 + 4)    #加法
+print(5-4)    #减法
+print(5*4)    #乘法
+print(5/4)    #除法，返回一个浮点数
+print(5//4)    #除法，返回一个整数
+print(5**4)    #乘方</code></pre><p>其结果为：</p>
+<blockquote>
+<p>9<br>1<br>20<br>1.25<br>1<br>625</p>
+</blockquote>
+<h2 id="math库"><a href="#math库" class="headerlink" title="math库"></a>math库</h2><p>上面简单介绍了数字类型和数值运算，而在数学方面这些内容远远不够，但是自己进行补充定义则有些麻烦。这时候我们就需要考虑时候有可用的包进行简化，避开自己定义的错误和繁琐，当然自己定义可用的包也是一种不错的练习方式。<br>通过阅读文档，可以得到<code>math标准库</code>，math包中补充了更多的数学函数。在使用时只需要导入包即可。<br>示例为math包内的两个常数：</p>
+<pre><code>import math
+print(math.pi)
+print(math.e)</code></pre><p>结果输出：</p>
+<blockquote>
+<p>3.141592653589793<br>2.718281828459045</p>
+</blockquote>
+<p>当然，如果想要更加高级的数学功能，可以考虑选择标准库之外的<code>numpy</code>和<code>scipy</code>项目，它们不但支持数组和矩阵运算，还有丰富的数学和物理方程可供使用。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">math.acos(x)</td>
+<td align="center">反三角函数的反余弦函数，返回弧度为x的反余弦值</td>
+</tr>
+<tr>
+<td align="center">math.asin(x)</td>
+<td align="center">反三角函数的反正弦函数，返回弧度为x的反正弦值</td>
+</tr>
+<tr>
+<td align="center">math.atan(x)</td>
+<td align="center">反三角函数的反正切函数，返回弧度为x的反正弦值</td>
+</tr>
+<tr>
+<td align="center">math.ceil(x)</td>
+<td align="center">对传入的参数进行向上取整，例如x=2.7，返回3</td>
+</tr>
+<tr>
+<td align="center">math.cos(x)</td>
+<td align="center">三角函数的余弦函数，返回弧度为x的余弦值</td>
+</tr>
+<tr>
+<td align="center">math.degrees(x)</td>
+<td align="center">把弧度x转化为角度，例如x=math.pi，返回45.0</td>
+</tr>
+<tr>
+<td align="center">math.fabs(x)</td>
+<td align="center">对传入的参数进行绝对值，例如x=-4，返回4</td>
+</tr>
+<tr>
+<td align="center">math.factorial(x)</td>
+<td align="center">对传入的参数进行阶乘，例如x=4，返回24</td>
+</tr>
+<tr>
+<td align="center">math.floor(x)</td>
+<td align="center">对传入的参数进行向上取整，例如x=2.7，返回2</td>
+</tr>
+<tr>
+<td align="center">math.gcd(x,y)</td>
+<td align="center">返回x,y的最大公约数，例如x=3,y=15，返回3</td>
+</tr>
+<tr>
+<td align="center">math.hypot(x,y)</td>
+<td align="center">返回(x+y)^2的值，效果和勾股定律一致，例如x=3，y=4，返回5.0</td>
+</tr>
+<tr>
+<td align="center">math.log(x)</td>
+<td align="center">对数，默认基底为e。可以使用base参数，来改变对数的基底。比如math.log(100,base=10)</td>
+</tr>
+<tr>
+<td align="center">math.modf(x)</td>
+<td align="center">返回由x的小数部分和整数部分组成的元组,例如x=math.pi，返回(0.14159265358979312, 3.0)</td>
+</tr>
+<tr>
+<td align="center">math.pow(x,y)</td>
+<td align="center">指数运算，得到x的y次方，与x**y效果类似</td>
+</tr>
+<tr>
+<td align="center">math.radians(x)</td>
+<td align="center">把角度x转化为弧度，例如x=45，π/4</td>
+</tr>
+<tr>
+<td align="center">math.sin(x)</td>
+<td align="center">三角函数的正弦函数，返回弧度为x的正弦值</td>
+</tr>
+<tr>
+<td align="center">math.sqrt(x)</td>
+<td align="center">对传入的参数进行平方根，例如x=4，返回2</td>
+</tr>
+<tr>
+<td align="center">math.tan(x)</td>
+<td align="center">三角函数的正切函数，返回弧度为x的正切值</td>
+</tr>
+<tr>
+<td align="center">math.trunc(x)</td>
+<td align="center">返回x的整数部分,效果与x//1相似</td>
+</tr>
+</tbody></table>
+<h2 id="random包"><a href="#random包" class="headerlink" title="random包"></a>random包</h2><p>random包是可以用来生成随机数。随机数不仅可以用于数学用途，还经常被嵌入到算法中，用以提高算法效率，并提高程序的安全性。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">random.choice(x)</td>
+<td align="center">在序列x中随机选取一个值，例如random.choice(range(20)),从0到19中随机挑选一个整数</td>
+</tr>
+<tr>
+<td align="center">random.randrange(x,y,z)</td>
+<td align="center">从x到y-1间随机选取z个值，y值为必需，x、z可选择</td>
+</tr>
+<tr>
+<td align="center">random.random()</td>
+<td align="center">在[1,0)间随机挑选1个值</td>
+</tr>
+<tr>
+<td align="center">random.randint(x)</td>
+<td align="center">在[0,x)中随机挑选1个整数</td>
+</tr>
+<tr>
+<td align="center">random.seed(x)</td>
+<td align="center">可选参数x，无设置时以时间戳为种子</td>
+</tr>
+<tr>
+<td align="center">random.shuffle(list)</td>
+<td align="center">打乱列表list内原有排序</td>
+</tr>
+<tr>
+<td align="center">random.uniform(x, y)</td>
+<td align="center">在[x,y]间随机挑选1个值的下一个实数</td>
+</tr>
+</tbody></table>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/mourenwang/mourenwang.github.io/upload/2020/02/09/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BNumber/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/02/12/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BString/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            基础数据类型之String
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/01/28/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">基础数据类型</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        南城
+      </li>
+      <li>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/side.png" alt="南方的雨如你"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/Python3">Python3</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/node">随记</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/me.html">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>～你的支持，倍感荣幸～</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['南方的雨如你，来时不能自已','你的微笑是点亮我黑暗世界的一道光','想要的都拥有，得不到的都释怀'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+  </div>
+</body>
+
+</html>

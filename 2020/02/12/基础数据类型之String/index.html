@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    基础数据类型之String |  南方的雨如你
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-基础数据类型之String" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  基础数据类型之String
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/02/12/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BString/" class="article-date">
+  <time datetime="2020-02-12T10:31:54.000Z" itemprop="datePublished">2020-02-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python3/">Python3</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.8k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">10分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>在Python中字符串可以说是最常用到的数据类型了，在Python定义中没有单字符类型，只要是在<code>成对</code>单引号(<code>&#39;</code>)、双引号(<code>&quot;</code>)以及三引号(<code>&#39;&#39;&#39;</code> or <code>&quot;&quot;&quot;</code>)间的值都认为是字符串，</p>
+<pre><code>var1 = &apos;hello,world&apos;
+var2 = &quot;hello,world&quot;
+print(var1==var2)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>True</p>
+</blockquote>
+<p><strong><em>值得一提的是，在编写代码的时候，最好在文件头指定字符编码，防止在不同系统使用的时候字符的乱码引起麻烦</em></strong><br><img src="/images/文稿图片/String之文件头.png"></p>
+<h3 id="Python-访问字符串中的值"><a href="#Python-访问字符串中的值" class="headerlink" title="Python 访问字符串中的值"></a>Python 访问字符串中的值</h3><p>字符串的整体可以比喻成数学里的数轴，从0开始每个点都有特定的值，代表着字符串上该点的值。</p>
+<pre><code>var1=‘hello，world’
+print(var1[2])   #截取var1上第3个点的值
+print(var1[:3])  #截取var1上前3个点的值，采取的是[a:b)原则
+print(var1+&apos;!&apos;)  #对字符串var1进行更新</code></pre><p>其结果为：</p>
+<blockquote>
+<p>l<br>hel<br>hello,world!</p>
+</blockquote>
+<h3 id="Python-转义字符"><a href="#Python-转义字符" class="headerlink" title="Python 转义字符"></a>Python 转义字符</h3><p>在需要在字符中使用特殊字符时，python用反斜杠()转义字符。<br>例如，想要输出单个字符(‘)，但是在定义的时候是<code>‘’‘</code>，如果仅是这样进行编译，那么在运行的时候会进行报错。<br><img src="/images/文稿图片/String之转义报错.png"><br>转义字符如下表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(在行尾处)</td>
+<td align="center">续接上一行</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="center">反斜杠符号</td>
+</tr>
+<tr>
+<td align="center">&#39;</td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center">&quot;</td>
+<td align="center">双引号</td>
+</tr>
+<tr>
+<td align="center">\a</td>
+<td align="center">响铃(bee~)</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="center">退格(等效空格键)</td>
+</tr>
+<tr>
+<td align="center">\000</td>
+<td align="center">空</td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td align="center">换行</td>
+</tr>
+<tr>
+<td align="center">\v</td>
+<td align="center">纵向制表符</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">横向制表符(Tab)</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td align="center">回车</td>
+</tr>
+<tr>
+<td align="center">\f</td>
+<td align="center">换页</td>
+</tr>
+<tr>
+<td align="center">\o–</td>
+<td align="center">表示八进制数，<strong>–</strong>表示字符</td>
+</tr>
+<tr>
+<td align="center">\x–</td>
+<td align="center">表示十六进制数，<strong>–</strong>表示字符</td>
+</tr>
+<tr>
+<td align="center">\other</td>
+<td align="center">表示其他字符以普通形式输出</td>
+</tr>
+</tbody></table>
+<h3 id="Python-字符串格式化"><a href="#Python-字符串格式化" class="headerlink" title="Python 字符串格式化"></a>Python 字符串格式化</h3><p>Python支持格式化字符串的输出，具有两种表现形式：</p>
+<h4 id="与C语言中printf函数一样的语法。"><a href="#与C语言中printf函数一样的语法。" class="headerlink" title="与C语言中printf函数一样的语法。"></a>与<code>C语言</code>中<code>printf</code>函数一样的语法。</h4><pre><code>\#!/usr/bin/env python3
+\# -\*- coding: utf-8 -\*- 
+print (&quot;我叫%s，今年%d岁现在是%s!&quot; % (&apos;小明&apos;, 10,&apos;小学三年级了&apos;))</code></pre><p>其结果为：</p>
+<blockquote>
+<p>我叫小明，今年10岁现在是小学三年级了！</p>
+</blockquote>
+<p>Python字符串格式化符号:</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式化符号</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%c</td>
+<td align="center">格式化字符及其ASCII码</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">格式化整数</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">格式化浮点数字，可指定小数点后的精度</td>
+</tr>
+<tr>
+<td align="center">%e(%E)</td>
+<td align="center">用科学计数法格式化浮点数</td>
+</tr>
+<tr>
+<td align="center">%g(%G)</td>
+<td align="center">%f和%e(%E)的简写</td>
+</tr>
+<tr>
+<td align="center">%o</td>
+<td align="center">格式化无符号八进制数</td>
+</tr>
+<tr>
+<td align="center">%p</td>
+<td align="center">用十六进制数格式化变量的地址</td>
+</tr>
+<tr>
+<td align="center">%s</td>
+<td align="center">格式化字符串</td>
+</tr>
+<tr>
+<td align="center">%u</td>
+<td align="center">格式化无符号整型</td>
+</tr>
+<tr>
+<td align="center">%x(%X)</td>
+<td align="center">格式化无符号十六进制数（大写）</td>
+</tr>
+</tbody></table>
+<p>Python还存在一些格式化操作符辅助指令:</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">定义宽度或者小数点精度</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">用做左对齐</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">在正数前面显示加号( + )</td>
+</tr>
+<tr>
+<td align="center">&lt;sp&gt;</td>
+<td align="center">在正数前面显示空格</td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">在八进制数前面显示零(‘0’)，在十六进制前面显示’0x’或者’0X’(取决于用的是’x’还是’X’)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">显示的数字前面填充’0’而不是默认的空格</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">‘%%’输出一个单一的’%’</td>
+</tr>
+<tr>
+<td align="center">(var)</td>
+<td align="center">映射变量(字典参数)</td>
+</tr>
+<tr>
+<td align="center">m.n</td>
+<td align="center">m是显示的最小总宽度,n 是小数点后的位数(如果可用的话)</td>
+</tr>
+</tbody></table>
+<h4 id="f-string"><a href="#f-string" class="headerlink" title="f-string"></a>f-string</h4><p><code>f-string</code>是 python3.6之后版本添加的，称之为字面量格式化字符串，是新的格式化字符串的语法。<br>不用再去判断是%d还是%s了，直接可以使用：</p>
+<pre><code>\#!/usr/bin/env python3
+\# -\*- coding: utf-8 -\*-     
+x = 1
+print(f&apos;{x+1=}&apos;)   #{}内带有可执行表达式</code></pre><p>其结果为：</p>
+<blockquote>
+<p>x+1=2</p>
+</blockquote>
+<h4 id="Python-内建String函数"><a href="#Python-内建String函数" class="headerlink" title="Python 内建String函数"></a>Python 内建String函数</h4><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">capitalize()</td>
+<td align="center">将字符串的第一个字符转换为大写</td>
+</tr>
+<tr>
+<td align="center">center(width, fillchar)</td>
+<td align="center">返回一个指定的宽度width居中的字符串，fillchar为填充的字符，默认为空格</td>
+</tr>
+<tr>
+<td align="center">count(str, beg= 0,end=len(string))</td>
+<td align="center">返回str在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数</td>
+</tr>
+<tr>
+<td align="center">bytes.decode(encoding=”utf-8”, errors=”strict”)</td>
+<td align="center">Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回</td>
+</tr>
+<tr>
+<td align="center">encode(encoding=’UTF-8’,errors=’strict’)</td>
+<td align="center">以 encoding 指定的编码格式编码字符串，如果出错默认报一ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’</td>
+</tr>
+<tr>
+<td align="center">endswith(suffix, beg=0, end=len(string))</td>
+<td align="center">检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False</td>
+</tr>
+<tr>
+<td align="center">expandtabs(tabsize=8)</td>
+<td align="center">把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8</td>
+</tr>
+<tr>
+<td align="center">find(str, beg=0, end=len(string))</td>
+<td align="center">检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1</td>
+</tr>
+<tr>
+<td align="center">index(str, beg=0, end=len(string))</td>
+<td align="center">跟find()方法一样，只不过如果str不在字符串中会报一个异常</td>
+</tr>
+<tr>
+<td align="center">isalnum()</td>
+<td align="center">如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False</td>
+</tr>
+<tr>
+<td align="center">isalpha()</td>
+<td align="center">如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False</td>
+</tr>
+<tr>
+<td align="center">isdigit()</td>
+<td align="center">如果字符串只包含数字则返回 True 否则返回 False</td>
+</tr>
+<tr>
+<td align="center">islower()</td>
+<td align="center">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="center">isnumeric()</td>
+<td align="center">如果字符串中只包含数字字符，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="center">isspace()</td>
+<td align="center">如果字符串中只包含空白，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="center">istitle()</td>
+<td align="center">如果字符串是标题化的(见 title())则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="center">isupper()</td>
+<td align="center">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="center">join(seq)</td>
+<td align="center">以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串</td>
+</tr>
+<tr>
+<td align="center">len(string)</td>
+<td align="center">返回字符串长度</td>
+</tr>
+<tr>
+<td align="center">ljust(width[, fillchar])</td>
+<td align="center">返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格</td>
+</tr>
+<tr>
+<td align="center">lower()</td>
+<td align="center">转换字符串中所有大写字符为小写</td>
+</tr>
+<tr>
+<td align="center">lstrip()</td>
+<td align="center">截掉字符串左边的空格或指定字符</td>
+</tr>
+<tr>
+<td align="center">maketrans()</td>
+<td align="center">创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标</td>
+</tr>
+<tr>
+<td align="center">max(str)</td>
+<td align="center">返回字符串str中最大的字母</td>
+</tr>
+<tr>
+<td align="center">min(str)</td>
+<td align="center">返回字符串str中最小的字母</td>
+</tr>
+<tr>
+<td align="center">replace(old, new [, max])</td>
+<td align="center">把将字符串中的str1替换成str2,如果max指定，则替换不超过max次</td>
+</tr>
+<tr>
+<td align="center">rfind(str, beg=0,end=len(string))</td>
+<td align="center">类似于 find()函数，不过是从右边开始查找</td>
+</tr>
+<tr>
+<td align="center">rindex( str, beg=0, end=len(string))</td>
+<td align="center">类似于 index()，不过是从右边开始</td>
+</tr>
+<tr>
+<td align="center">rjust(width,[, fillchar])</td>
+<td align="center">返回一个原字符串右对齐,并使用fillchar(默认空格)填充至长度width的新字符串</td>
+</tr>
+<tr>
+<td align="center">rstrip()</td>
+<td align="center">删除字符串字符串末尾的空格</td>
+</tr>
+<tr>
+<td align="center">split(str=””, num=string.count(str))</td>
+<td align="center">num=string.count(str)以str为分隔符截取字符串，如果num有指定值，则仅截取num+1个子字符串</td>
+</tr>
+<tr>
+<td align="center">splitlines([keepends])</td>
+<td align="center">按照行(‘\r’,’\r\n’,’\n’)分隔，返回一个包含各行作为元素的列表，如果参数keepends为 False，不包含换行符，如果为True，则保留换行符</td>
+</tr>
+<tr>
+<td align="center">startswith(substr, beg=0,end=len(string))</td>
+<td align="center">检查字符串是否是以指定子字符串substr开头，是则返回True，否则返回False。如果beg和end指定值，则在指定范围内检查</td>
+</tr>
+<tr>
+<td align="center">strip([chars])</td>
+<td align="center">在字符串上执行lstrip()和rstrip()</td>
+</tr>
+<tr>
+<td align="center">swapcase()</td>
+<td align="center">将字符串中大写转换为小写，小写转换为大写</td>
+</tr>
+<tr>
+<td align="center">title()</td>
+<td align="center">返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())</td>
+</tr>
+<tr>
+<td align="center">translate(table, deletechars=””)</td>
+<td align="center">根据 str给出的表(包含256个字符)转换string的字符，要过滤掉的字符放到 deletechars参数中</td>
+</tr>
+<tr>
+<td align="center">upper()</td>
+<td align="center">转换字符串中的小写字母为大写</td>
+</tr>
+<tr>
+<td align="center">zfill(width)</td>
+<td align="center">返回长度为 width 的字符串，原字符串右对齐，前面填充0</td>
+</tr>
+<tr>
+<td align="center">isdecimal()</td>
+<td align="center">检查字符串是否只包含十进制字符，如果是返回 true，否则返回false</td>
+</tr>
+</tbody></table>
+<h4 id="String样例"><a href="#String样例" class="headerlink" title="String样例"></a>String样例</h4><pre><code>#!/usr/bin/env python3      #告诉Linux/OS 系统这是一个可执行程序，Windows省略
+# -*- coding: utf-8 -*-     #指定字符编码
+
+while True:
+    string = input(&quot;请输入字符串(输入0结束)：&quot;).strip()  # 对输入字符串进行左右去除空格
+    if string==&apos;0&apos;:
+        break;
+    while True:
+        print(&apos;&apos;&apos;Menu：
+    1:upper()      #字符串中小写转化为大写
+    2:title()       #字符串标题化，即字符串以大写开头
+    3:lower()       #字符串中大写转化为小写
+    4:len(string)   #返回字符串的长度
+    0:exit()        #终止当前程序&apos;&apos;&apos;)
+        i = input(&apos;请输入字符串函数编号进行字符串操作，输入0结束：&apos;)
+        if i== &apos;1&apos;:
+            print(string.upper())
+        elif i == &apos;2&apos;:
+            print(string.title())
+        elif i == &apos;3&apos;:
+            print(string.lower())
+        elif i == &apos;4&apos;:
+            print(string+&apos;的长度为：&apos;+str(len(string)))
+        elif i == &apos;0&apos;:
+            break;</code></pre><p>当我们运行输入相应字符之后：</p>
+<blockquote>
+<p>请输入字符串(输入0结束)：  hello world<br>Menu：<br>    1:upper()      #字符串中小写转化为大写<br>    2:title()       #字符串标题化，即字符串以大写开头<br>    3:lower()       #字符串中大写转化为小写<br>    4:len(string)   #返回字符串的长度<br>    0:exit()        #终止当前程序<br>请输入字符串函数编号进行字符串操作，输入0结束：1<br>HELLO WORLD<br>Menu：<br>    1:upper()      #字符串中小写转化为大写<br>    2:title()       #字符串标题化，即字符串以大写开头<br>    3:lower()       #字符串中大写转化为小写<br>    4:len(string)   #返回字符串的长度<br>    0:exit()        #终止当前程序<br>请输入字符串函数编号进行字符串操作，输入0结束：2<br>Hello World<br>Menu：<br>    1:upper()      #字符串中小写转化为大写<br>    2:title()       #字符串标题化，即字符串以大写开头<br>    3:lower()       #字符串中大写转化为小写<br>    4:len(string)   #返回字符串的长度<br>    0:exit()        #终止当前程序<br>请输入字符串函数编号进行字符串操作，输入0结束：3<br>hello world<br>Menu：<br>    1:upper()      #字符串中小写转化为大写<br>    2:title()       #字符串标题化，即字符串以大写开头<br>    3:lower()       #字符串中大写转化为小写<br>    4:len(string)   #返回字符串的长度<br>    0:exit()        #终止当前程序<br>请输入字符串函数编号进行字符串操作，输入0结束：4<br>hello world的长度为：11<br>Menu：<br>    1:upper()      #字符串中小写转化为大写<br>    2:title()       #字符串标题化，即字符串以大写开头<br>    3:lower()       #字符串中大写转化为小写<br>    4:len(string)   #返回字符串的长度<br>    0:exit()        #终止当前程序<br>请输入字符串函数编号进行字符串操作，输入0结束：0<br>请输入字符串(输入0结束)：0</p>
+</blockquote>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/mourenwang/mourenwang.github.io/upload/2020/02/12/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BString/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/03/04/Proclamations/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Proclamations
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/02/09/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BNumber/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">基础数据类型之Number</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        南城
+      </li>
+      <li>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/side.png" alt="南方的雨如你"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/Python3">Python3</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/node">随记</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/me.html">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>～你的支持，倍感荣幸～</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['南方的雨如你，来时不能自已','你的微笑是点亮我黑暗世界的一道光','想要的都拥有，得不到的都释怀'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+  </div>
+</body>
+
+</html>

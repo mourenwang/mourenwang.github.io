@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    基础语法 |  南方的雨如你
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-基础语法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  基础语法
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/01/22/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2020-01-22T11:13:18.000Z" itemprop="datePublished">2020-01-22</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python3/">Python3</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.6k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h2 id="Python的编码"><a href="#Python的编码" class="headerlink" title="Python的编码"></a>Python的编码</h2><p>Python的默认编码是UTF-8,所有字符串都是 unicode 字符串，如果需要在文件应用不同类型的编码，需要在文件头添加</p>
+<blockquote>
+<h2 id="coding-UTF-8"><a href="#coding-UTF-8" class="headerlink" title="# -*- coding:UTF-8 -*-"></a># -*- coding:UTF-8 -*-</h2></blockquote>
+<p>描述使用的是<strong><em>GBK</em></strong>编码。</p>
+<h2 id="Python的标识符"><a href="#Python的标识符" class="headerlink" title="Python的标识符"></a>Python的标识符</h2><p>标识符可以理解为变量的名字，可以用中文作为标识符，最好使用英语作为标识符，避免不同操作系统导致的乱码。使用英语作为标识符时最好是见文之意，方便后续的维护。最好遵循以下的命名规制：</p>
+<p>必须以字母表中的字母或者下划线（_）开头<br>其他部分可由字母、数字、下划线组成<br>大小写敏感，例如result、RESULT是表示不同的标识符</p>
+<h2 id="Python的保留字"><a href="#Python的保留字" class="headerlink" title="Python的保留字"></a>Python的保留字</h2><p>Python中具有32个保留字，这些保留字不可以作为标识符，否则会引起异常。保留字如下表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">False</th>
+<th align="center">None</th>
+<th align="center">True</th>
+<th align="center">and</th>
+<th align="center">as</th>
+<th align="center">assert</th>
+<th align="center">break</th>
+<th align="center">class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">continue</td>
+<td align="center">def</td>
+<td align="center">del</td>
+<td align="center">elif</td>
+<td align="center">else</td>
+<td align="center">except</td>
+<td align="center">finally</td>
+<td align="center">yield</td>
+</tr>
+<tr>
+<td align="center">for</td>
+<td align="center">from</td>
+<td align="center">global</td>
+<td align="center">if</td>
+<td align="center">import</td>
+<td align="center">in</td>
+<td align="center">is</td>
+<td align="center">lambda</td>
+</tr>
+<tr>
+<td align="center">no</td>
+<td align="center">local</td>
+<td align="center">not</td>
+<td align="center">or</td>
+<td align="center">pass</td>
+<td align="center">raise</td>
+<td align="center">return</td>
+<td align="center">try</td>
+</tr>
+</tbody></table>
+<h2 id="Python的第一个程序"><a href="#Python的第一个程序" class="headerlink" title="Python的第一个程序"></a>Python的第一个程序</h2><p>每种编程语言都是从hello world开始编程之旅，这次我也不例外。</p>
+<pre><code># -*- coding:UTF-8 -*-
+print(&apos;hello world&apos;)    #第一个程序</code></pre><p>结果为：</p>
+<blockquote>
+<p>hello world</p>
+</blockquote>
+<p>由此可见，在文件可以使用#来进行注释，其注释结果不被进行编译。多行注释可以用多个#号，还有’’’和”””，注意当使用三单（双）引号时必需有配对才可以正常使用，例如</p>
+<pre><code>&quot;&quot;&quot;hello world,  
+bye,world.&quot;&quot;&quot;</code></pre><p><code>print()</code>函数则是将括号内的内容进行打印，如果是使用编译器，则是在编译器的控制台出打印内容，若是在终端进行命令行操作，则在命令行的下一行进行打印内容。</p>
+<h2 id="程序的结构"><a href="#程序的结构" class="headerlink" title="程序的结构"></a>程序的结构</h2><p>程序的结构有<strong>顺序结构</strong>、<strong>循环结构</strong>、<strong>选择结构</strong>。<br><strong><em>循环结构和选择结构中还涉及行与缩进，缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。<br>如果在连续的代码行中的缩进空格数相等，那么这些代码行属于同一个代码块。这一点在选择结构、循环结构、函数、类中得以应用。函数和类将在后续内容中进行讲解。</em></strong></p>
+<h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p>顺序结构是一种线性、有序的结构,它依次执行各语句模块。</p>
+<pre><code>a=500
+b=20
+print(a+b)</code></pre><p>结果为：</p>
+<blockquote>
+<p>520</p>
+</blockquote>
+<h3 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h3><p>选择结构是根据条件成立与否选择程序执行的通路。<br>选择结构的内容可以理解为如果……就……或者……否则……，用程序表示则为if……else if……else……，用程序表示：</p>
+<pre><code>a=520
+b=250
+if a==520:
+    print(’我爱你‘)
+elif a==250:
+    print(&apos;你个大傻子&apos;)
+else:
+    print(&apos;没有结果&apos;)</code></pre><p>结果为：</p>
+<blockquote>
+<p>我爱你</p>
+</blockquote>
+<p><strong><em>当然elif、else语句不是一定要有的，但是如果有elif或else语句，那一一定要有if语句。</em></strong></p>
+<p>值得一提的是，在选择结构中存在断点的的想象，符合逻辑的推导。例如：</p>
+<pre><code>a=520
+b=250
+if a==520:
+    print(’我爱你‘)
+elif b==250:
+    print(&apos;你个大傻子&apos;)
+else:
+    print(&apos;没有结果&apos;)</code></pre><p>结果为：</p>
+<blockquote>
+<p>我爱你</p>
+</blockquote>
+<p>在结构中，a和b同时符合选择分支，但是只能选择一条通路，这时就得判断先后顺序来选择通路。</p>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><p>循环结构是重复执行一个或几个模块,直到满足某一条件为止。<br><code>break</code>语句可以使循环结构终止，如果有多层循环的话，只能使最内层循环终止。<br><code>continue</code>语句可以使循环结构跳过本次循环，一般和条件结构一起使用。<br><code>pass</code>语句可以使循环结构进入循环阻塞，按<code>Ctrl+C</code>进行终止。</p>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><p><em>while 判断条件(condition)：<br>执行语句(statements)……</em><br>当判断条件不符合时，while循环结束，结果停止在最后一次循环上。<br>例如：</p>
+<pre><code>i=1
+while i&lt;=60:
+    print(&quot;我向你发射&quot;+str(i)+&quot;秒的爱意！biu～&quot;)
+    i=i+1</code></pre><p>当i==61时，循环停止，其结果为：</p>
+<blockquote>
+<p>我向你发射1秒的爱意！biu～<br>我向你发射2秒的爱意！biu～<br>……<br>我向你发射60秒的爱意！biu～</p>
+</blockquote>
+<p>因为i的类型为int，使用<code>str()</code>可以将i转化为str。</p>
+<p><code>break</code>语句示例：</p>
+<pre><code>i=1
+while i&lt;=60:
+    print(&quot;我向你发射&quot;+str(i)+&quot;秒的爱意！biu～&quot;)
+    break；</code></pre><p>其结果为：</p>
+<blockquote>
+<p>我向你发射1秒的爱意！biu～</p>
+</blockquote>
+<p><code>continue</code>语句示例：</p>
+<pre><code>i=1
+while i&lt;=60:
+    print(&quot;我向你发射&quot;+str(i)+&quot;秒的爱意！biu～&quot;)
+    if i!=60:
+        continue;</code></pre><p>其结果为：</p>
+<blockquote>
+<p>我向你发射1秒的爱意！biu～<br>我向你发射60秒的爱意！biu～</p>
+</blockquote>
+<p><code>pass</code>语句示例：</p>
+<pre><code>i=1
+while i&lt;=60:
+    pass    
+    print(&quot;我向你发射&quot;+str(i)+&quot;秒的爱意！biu～&quot;)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>我向你发射1秒的爱意！biu～<br>我向你发射1秒的爱意！biu～<br>……<br>我向你发射1秒的爱意！biu～</p>
+</blockquote>
+<p>仅有按下<code>Ctrl+C</code>后才终止，否则无限循环，直到CPU空间被占满。<br><code>while死循环</code>示例：</p>
+<pre><code>while i==1:     # or （while Ture：）
+
+    print(&quot;我向你发射爱意！biu～&quot;)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>我向你发射爱意！biu～<br>我向你发射爱意！biu～<br>……<br>我向你发射爱意！biu～</p>
+</blockquote>
+<p>经过对比，是否对几个语句有所了解了呢。</p>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><p>for循环可以遍历任何序列的项目，如一个列表或者一个字符串。</p>
+<pre><code>for &lt;variable\&gt; in &lt;sequence\&gt;:
+    &lt;statements\&gt;
+else:
+    &lt;statements\&gt;</code></pre><p>例如：</p>
+<pre><code>for i in range(5):
+    print(&apos;一如既往地想你+&apos;+str(i))</code></pre><p>结果为：</p>
+<blockquote>
+<p>一如既往地想你+0<br>一如既往地想你+1<br>一如既往地想你+2<br>一如既往地想你+3<br>一如既往地想你+4</p>
+</blockquote>
+<p><code>range()</code>函数可以使括号内的参数生成一个列表，具有多种使用方法。</p>
+<ul>
+<li>range(5),将产生含0~4的数值列表[0,1,2,3,4]</li>
+<li>range(2,5),将产生含2~4的数值列表[2,3,4]</li>
+<li>range(2,5,2),将产生含2~4且步长为2的数值列表[2,4]</li>
+</ul>
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/mourenwang/mourenwang.github.io/upload/2020/01/22/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/01/28/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            基础数据类型
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/01/21/answer/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">answer</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        南城
+      </li>
+      <li>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/side.png" alt="南方的雨如你"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/Python3">Python3</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/node">随记</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/me.html">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>～你的支持，倍感荣幸～</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['南方的雨如你，来时不能自已','你的微笑是点亮我黑暗世界的一道光','想要的都拥有，得不到的都释怀'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+  </div>
+</body>
+
+</html>
