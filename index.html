@@ -65,6 +65,232 @@
     
     
     
+    <article id="post-基础数据类型之List" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/04/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BList/"
+    >基础数据类型之List</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/04/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8BList/" class="article-date">
+  <time datetime="2020-03-04T06:05:54.000Z" itemprop="datePublished">2020-03-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python3/">Python3</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>列表（list）是Python中最有用的数据类型之一。与字符串类似，list是由多个值组成的序列。在字符串中，每个值都是字符；而在列表中，值可以是任何数据类型。列表中的值称为<code>元素（element）</code>或<code>项（item）</code> 。</p>
+<p>创建新列表的方法有多种；最简单的方法是用方括号( <code>[ 和 ]</code> )将元素包括起来:</p>
+<pre><code>[1, 2, 3, 4]
+[&apos;sing&apos;, &apos;jump&apos;, &apos;rap&apos;,&apos;basketball&apos;]</code></pre><p>第一个例子是包含4个整数的列表。第二个是一个包含4个字符串的列表。 当然，一个列表中的元素可以不需要是相同的数据类型。例如：</p>
+<pre><code>[&apos;spam&apos;, 2.0, 5, [10, 20]]</code></pre><p><em>一个列表在另一个列表中，称为<strong>嵌套（nested）列表</strong>。</em><br><em>一个不包含元素的列表被称为空列表；你可以用空的方括号 [] 创建一个空列表。</em><br>正如你想的那样，你可以将列表的值赋给变量：</p>
+<pre><code>cxk = [&apos;sing&apos;, &apos;jump&apos;, &apos;rap&apos;,&apos;basketball&apos;]
+numbers = [42, 123]
+empty = []
+print(cheeses, numbers, empty)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[‘Cheddar’, ‘Edam’, ‘Gouda’] [42, 123] []</p>
+</blockquote>
+<h2 id="列表是可变的"><a href="#列表是可变的" class="headerlink" title="列表是可变的"></a>列表是可变的</h2><p>访问列表中元素的语法，与访问字符串中字符的语法相同，都是通过方括号运算符实现的。 括号中的表达式指定了元素的索引。记住，索引从0开始：<br>    print(cheeses[0])<br>其结果为：</p>
+<blockquote>
+<p>‘Cheddar’</p>
+</blockquote>
+<p>和字符串不同的是，列表是可变的。当括号运算符出现在赋值语句的左边时，它就指向了列表中将被赋值的元素。</p>
+<pre><code>numbers = [42, 123]
+numbers[1] = 5
+print(numbers)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[42, 5]</p>
+</blockquote>
+<p><em>numbers中索引为1的元素，原来是123，现在变成了5。任何整数表达式都可以用作下标。如果你试图读或写一个不存在的元素，你将会得到一个索引错误(IndexError)。如果下标是负数，它将从列表的末端开始访问列表。</em></p>
+<p><strong>in运算符在列表中同样可以使用。</strong></p>
+<pre><code>cxk = [&apos;sing&apos;, &apos;jump&apos;, &apos;rap&apos;,&apos;basketball&apos;]
+print(&apos;basketball&apos; in cxk)
+print(&apos;pingpong&apos; in cxk)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>True<br>False</p>
+</blockquote>
+<h2 id="遍历列表"><a href="#遍历列表" class="headerlink" title="遍历列表"></a>遍历列表</h2><p>最常用的遍历列表的方式是使用for循环。语法和字符串遍历类似：</p>
+<pre><code>cxk = [&apos;sing&apos;, &apos;jump&apos;, &apos;rap&apos;,&apos;basketball&apos;]
+for i in cxk:
+    print(i)</code></pre><p>如果你只需要读取列表中的元素，这种方法已经足够。然而，如果你想要写入或者更新列表中的元素，你需要通过下标访问。一种常用的方法是结合内置函数 <code>range</code>和 <code>len</code> ：</p>
+<pre><code>for i in range(len(cxk)):
+    cxk[i] = cxk[i] * 2         #双倍的快乐【/手动狗头】</code></pre><p>这个循环将遍历列表并更新每个元素。len 返回列表中的元素个数。range 返回一个包含从0到n−1下标的列表，其中n是列表的长度。 每次循环中，i 得到下一个元素的下标。循环主体中的赋值语句使用 i 读取该元素的旧值，并赋予其一个新值。</p>
+<p>对一个空列表执行for循环时，将不会执行循环的主体：</p>
+<pre><code>for x in []:
+    print(&apos;This never happens.&apos;)</code></pre><p>尽管一个列表可以包含另一个列表，嵌套的列表本身还是被看作一个单个元素。 下面这个列表的长度是4：</p>
+<pre><code>[&apos;spam&apos;, 1, [&apos;Brie&apos;, &apos;Roquefort&apos;, &apos;Pol le Veq&apos;], [1, 2, 3]]</code></pre><h2 id="列表操作"><a href="#列表操作" class="headerlink" title="列表操作"></a>列表操作</h2><p>运算符拼接多个列表：</p>
+<pre><code>a = [1, 2, 3]
+b = [4, 5, 6]
+c = a + b
+print(c)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[1, 2, 3, 4, 5, 6]</p>
+</blockquote>
+<p>运算符 * 以给定次数的重复一个列表:</p>
+<pre><code>print([0]*3)
+print([1, 2, 3] * 2)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[0,0,0]<br>[1, 2, 3, 1, 2, 3, 1, 2, 3]</p>
+</blockquote>
+<h2 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h2><p>切片（slice）运算符同样适用于对列表：</p>
+<pre><code>a=[1,2,3,4,5,6]
+print(a[1:3])
+print(a[:4])
+print(a[3:])
+print(a[::-1])
+print(a[:])</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[2,3]<br>[1,2,3]<br>[4,5,6]<br>[6,5,4,3,2,1]<br>[1,2,3,4,5,6]</p>
+</blockquote>
+<p>如果你省略第一个索引，切片将从列表头开始。如果你省略第二个索引，切片将会到列表尾结束。 所以如果你两者都省略，切片就是整个列表的一个拷贝。由于列表是可变的，通常在修改列表之前，对列表进行拷贝是很有用的。</p>
+<p>切片运算符放在赋值语句的左边时，可以一次更新多个元素：</p>
+<pre><code>t = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]
+t[1:3] = [&apos;x&apos;, &apos;y&apos;]
+print(t)
+[&apos;a&apos;, &apos;x&apos;, &apos;y&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]</code></pre><h2 id="列表方法"><a href="#列表方法" class="headerlink" title="列表方法"></a>列表方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">list.append(obj)</td>
+<td align="center">在列表末尾添加新的对象</td>
+</tr>
+<tr>
+<td align="center">list.count(obj)</td>
+<td align="center">统计某个元素在列表中出现的次数</td>
+</tr>
+<tr>
+<td align="center">list.extend(seq)</td>
+<td align="center">在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）</td>
+</tr>
+<tr>
+<td align="center">list.index(obj)</td>
+<td align="center">从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td align="center">list.insert(index, obj)</td>
+<td align="center">将对象插入列表</td>
+</tr>
+<tr>
+<td align="center">list.pop([index=-1])</td>
+<td align="center">移除列表中的一个元素（默认最后一个元素），并且返回该元素的值</td>
+</tr>
+<tr>
+<td align="center">list.remove(obj)</td>
+<td align="center">移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td align="center">list.reverse()</td>
+<td align="center">反向列表中元素</td>
+</tr>
+<tr>
+<td align="center">list.sort(cmp=None, key=None, reverse=False)</td>
+<td align="center">对原列表进行排序，当reverse=True时进行逆向排序</td>
+</tr>
+</tbody></table>
+<h2 id="列表和字符串"><a href="#列表和字符串" class="headerlink" title="列表和字符串"></a>列表和字符串</h2><p>一个字符串是多个字符组成的序列，一个列表是多个值组成的序列。但是一个由字符组成的列表不同于字符串。可以使用 list 将一个字符串转换为字符的列表:</p>
+<pre><code>s = &apos;spam&apos;
+t = list(s)
+print(t)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[‘s’, ‘p’, ‘a’, ‘m’]</p>
+</blockquote>
+<p>由于 list 是内置函数的名称，你应避免将它用作变量名。我同样避免使用 l ，因为它看起来很像1。这就是为什么我用了 t 。</p>
+<p>list函数将字符串分割成单独的字符。如果你想将一个字符串分割成一些单词，你可以使用 split 方法：</p>
+<pre><code>s = &apos;I like sing,jump,rap and play basketball&apos;
+t = s.split()
+print(t)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[‘I’, ‘like’ ,’sing,jump,rap’ ,’and’,’play’,’basketball’]</p>
+</blockquote>
+<p>可以提高一个叫做 分隔符（delimiter） 的可选参数，指定什么字符作为单词之间的分界线。下面的例子使用连字符作为分隔符：</p>
+<pre><code>s = &apos;spam-spam-spam&apos;
+delimiter = &apos;-&apos;
+t = s.split(delimiter)
+print(t)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>[‘spam’, ‘spam’, ‘spam’]</p>
+</blockquote>
+<p>join的功能和 split 相反。它将一个字符串列表的元素拼接起来。join 是一个字符串方法，所以你需要在一个分隔符上调用它，并传入一个列表作为参数：</p>
+<pre><code>t = [&apos;pining&apos;, &apos;for&apos;, &apos;the&apos;, &apos;fjords&apos;]
+delimiter = &apos; &apos;
+s = delimiter.join(t)
+print(s)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>‘pining for the fjords’</p>
+</blockquote>
+<p>在这个例子中，分隔符是一个空格，所以 join 在单词之间添加一个空格。如果不使用空格拼接字符串，你可以使用空字符串 ‘’ 作为分隔符。</p>
+<h2 id="小样例"><a href="#小样例" class="headerlink" title="小样例"></a>小样例</h2><pre><code>#!/usr/bin python3      #告诉Linux/OS 系统这是一个可执行程序，Windows省略
+# -*- coding: utf-8 -*-     #指定字符编码
+import random
+&apos;&apos;&apos;幸运1+6
+在1~49个数字中随机抽取7个数字，且保证不重复&apos;&apos;&apos;
+
+lists = [x for x in range(1,50)]
+lucky_numbers = []
+for i in range(7):
+    lucky_number = random.choice(lists)
+    lucky_numbers.append(lucky_number)
+    lists.remove(lucky_number)
+print(lucky_numbers)</code></pre><p>其结果为：<br><img src="/images/文稿图片/基本数据类型之list小样例.png" width="80%"></p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+
+</article>
+    
     <article id="post-Proclamations" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -1691,6 +1917,23 @@ else:
 
 <script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
 
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
     
   </div>
 </body>
