@@ -65,6 +65,129 @@
     
     
     
+    <article id="post-基础数据类型之tuple" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/11/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8Btuple/"
+    >基础数据类型之tuple</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/11/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8Btuple/" class="article-date">
+  <time datetime="2020-03-11T06:21:25.000Z" itemprop="datePublished">2020-03-11</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python3/">Python3</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="元组（tuple）"><a href="#元组（tuple）" class="headerlink" title="元组（tuple）"></a>元组（tuple）</h1><p>Python 的元组与列表类似，不同之处在于<code>元组的元素不能修改</code>。<br>元组通常使用小括号（列表是方括号），当然这不是硬性要求，不过使用括号对程序的可读性会增强。<br>元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。</p>
+<h2 id="访问元组"><a href="#访问元组" class="headerlink" title="访问元组"></a>访问元组</h2><p>进行元组访问可以和列表或字符串一样使用下标索引来访问元组中的值，例如:</p>
+<pre><code>#!/usr/bin/python3
+
+tuple1 = (&apos;a&apos;, &apos;b&apos;, &apos;c&apos;,1, 2)
+tuple2 = (1, 2, 3, 4, 5, 6, 7 )
+
+print (&quot;tuple1[0]: &quot;, tup1[0])
+print (&quot;tuple2[2:5]: &quot;, tup2[2:5])</code></pre><p>其结果为：</p>
+<blockquote>
+<p>tuple1[0]: a<br>tuple2[2:5]: 3,4,5</p>
+</blockquote>
+<h2 id="修改元组"><a href="#修改元组" class="headerlink" title="修改元组"></a>修改元组</h2><p>原则上元组中的元素值是不允许修改的，但是我们可以对元组进行拼接返回一个新的元组，如下:</p>
+<pre><code>#!/usr/bin/python3
+
+tuple1 = (1, 2,3)
+tuple2 = (&apos;a&apos;, &apos;b&apos;,‘c’)
+
+# 以下修改元组元素操作是非法的。
+# tuple1[0] = 100
+
+# 创建一个新的元组
+tuple3 = tuple1 + tuple2
+print (tup3)</code></pre><p>其结果为：</p>
+<blockquote>
+<p>1,2,3,a,b,c</p>
+</blockquote>
+<h2 id="内置方法"><a href="#内置方法" class="headerlink" title="内置方法"></a>内置方法</h2><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">len(tuple)</td>
+<td align="center">计算元组元素个数</td>
+</tr>
+<tr>
+<td align="center">max(tuple)</td>
+<td align="center">返回元组中元素最大值</td>
+</tr>
+<tr>
+<td align="center">min(tuple)</td>
+<td align="center">返回元组中元素最小值</td>
+</tr>
+<tr>
+<td align="center">tuple(iterable)</td>
+<td align="center">将可迭代系列转换为元组</td>
+</tr>
+<tr>
+<td align="center">divmod(x,y)</td>
+<td align="center">以两个值的元组的形式返回商和余数</td>
+</tr>
+</tbody></table>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+
+</article>
+    
     <article id="post-基础数据类型之List" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -1565,75 +1688,14 @@ else:
 
 </article>
     
-    <article id="post-about" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/01/11/about/"
-    >About me</a
-  >
-</h2>
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/01/11/about/" class="article-date">
-  <time datetime="2020-01-11T09:19:34.000Z" itemprop="datePublished">2020-01-11</time>
-</a>
-      
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <blockquote>
-<h1 id="南方的风和雨，我和你一起。"><a href="#南方的风和雨，我和你一起。" class="headerlink" title="南方的风和雨，我和你一起。"></a>南方的风和雨，我和你一起。</h1><h3 id="微信：missyou3070"><a href="#微信：missyou3070" class="headerlink" title="微信：missyou3070"></a>微信：missyou3070</h3><h3 id="QQ：374744710"><a href="#QQ：374744710" class="headerlink" title="QQ：374744710"></a>QQ：374744710</h3><h3 id="微信公众号：南方的雨如你"><a href="#微信公众号：南方的雨如你" class="headerlink" title="微信公众号：南方的雨如你"></a>微信公众号：南方的雨如你</h3></blockquote>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-
-</article>
-    
   </article>
   
 
+  
+  <nav class="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  </nav>
   
 </section>
 </div>
