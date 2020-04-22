@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    文件 |  南方的雨如你
+    函数 |  南方的雨如你
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -31,7 +31,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-文件" class="article article-type-post" itemscope
+  <article id="post-函数" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -39,7 +39,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  文件
+  函数
 </h1>
   
 
@@ -48,8 +48,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/03/25/%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2020-03-25T06:07:35.000Z" itemprop="datePublished">2020-03-25</time>
+      <a href="/2020/03/31/%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-03-31T08:04:32.000Z" itemprop="datePublished">2020-03-31</time>
 </a>
       
   <div class="article-category">
@@ -63,7 +63,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2k字</span>
+            <span class="post-count">1.3k字</span>
         </span>
     </span>
 
@@ -72,7 +72,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">7分钟</span>
+            <span class="post-count">5分钟</span>
         </span>
     </span>
 </div>
@@ -99,172 +99,112 @@
       
 
       
-      <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>在进行编写程序的时候，小数据的话经常是使用内部数据，用于终端输入和显示输出，可是在使用大量的数据的时候，一个一个地输入难免很是麻烦。于是，这个小节将带领大家步入文件操作，面对大量或小量数据的时候，可以利用文件进行数据的读写操作。</p>
-<h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><p>在以前讲解内容的时候，使用的都是临时数据，当退出程序的时候，一切数据都烟消云散，再次运行的时候，他又是全新的状态。</p>
-<p>另一种程序则是<strong>“持久”</strong>，数据存储在文件或者数据库之后，可进行读写操作。</p>
-<h2 id="读取和写入"><a href="#读取和写入" class="headerlink" title="读取和写入"></a>读取和写入</h2><p>文本文件是储存在类似硬盘、闪存、或者CD-ROM等永久介质上的字符序列。使用<code>open</code>方法对指定文件执行指定打开方式进行操作。一般使用方式的公式如下：<code>open(filename,mode)</code></p>
-<p>filename:文件地址，可以是相对地址或是绝对地址，如果仅有文件的名称则是相对地址，仅能打开同目录下的文件<br>mode：指定打开模式</p>
-<table>
-<thead>
-<tr>
-<th align="center">mode</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">t</td>
-<td align="center">文本模式 (默认模式)</td>
-</tr>
-<tr>
-<td align="center">x</td>
-<td align="center">写模式，新建一个文件，如果该文件已存在则会报错</td>
-</tr>
-<tr>
-<td align="center">b</td>
-<td align="center">二进制模式</td>
-</tr>
-<tr>
-<td align="center">+</td>
-<td align="center">打开一个文件进行更新(可读可写)</td>
-</tr>
-<tr>
-<td align="center">r</td>
-<td align="center">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式</td>
-</tr>
-<tr>
-<td align="center">rb</td>
-<td align="center">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等</td>
-</tr>
-<tr>
-<td align="center">r+</td>
-<td align="center">打开一个文件用于读写。文件指针将会放在文件的开头</td>
-</tr>
-<tr>
-<td align="center">rb+</td>
-<td align="center">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。一般用于非文本文件如图片等</td>
-</tr>
-<tr>
-<td align="center">w</td>
-<td align="center">打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件</td>
-</tr>
-<tr>
-<td align="center">wb</td>
-<td align="center">以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等</td>
-</tr>
-<tr>
-<td align="center">w+</td>
-<td align="center">打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件</td>
-</tr>
-<tr>
-<td align="center">wb+</td>
-<td align="center">以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="center">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入</td>
-</tr>
-<tr>
-<td align="center">ab</td>
-<td align="center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入</td>
-</tr>
-<tr>
-<td align="center">a+</td>
-<td align="center">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写</td>
-</tr>
-<tr>
-<td align="center">ab+</td>
-<td align="center">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写</td>
-</tr>
-</tbody></table>
-<h2 id="file-对象的方法"><a href="#file-对象的方法" class="headerlink" title="file 对象的方法"></a>file 对象的方法</h2><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">file.close()</td>
-<td align="center">关闭文件。关闭后文件不能再进行读写操作</td>
-</tr>
-<tr>
-<td align="center">file.flush()</td>
-<td align="center">刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件, 而不是被动的等待输出缓冲区写入</td>
-</tr>
-<tr>
-<td align="center">file.fileno()</td>
-<td align="center">返回一个整型的文件描述符(file descriptor FD 整型), 可以用在如os模块的read方法等一些底层操作上</td>
-</tr>
-<tr>
-<td align="center">file.isatty()</td>
-<td align="center">如果文件连接到一个终端设备返回 True，否则返回 False。</td>
-</tr>
-<tr>
-<td align="center">file.read([size])</td>
-<td align="center">从文件读取指定的字节数，如果未给定或为负则读取所有</td>
-</tr>
-<tr>
-<td align="center">file.readline([size])</td>
-<td align="center">读取整行，包括 “\n” 字符</td>
-</tr>
-<tr>
-<td align="center">file.readlines([sizeint])</td>
-<td align="center">读取所有行并返回列表，若给定sizeint&gt;0，返回总和大约为sizeint字节的行, 实际读取值可能比 sizeint 较大, 因为需要填充缓冲区</td>
-</tr>
-<tr>
-<td align="center">file.seek(offset[, whence])</td>
-<td align="center">移动文件读取指针到指定位置</td>
-</tr>
-<tr>
-<td align="center">file.tell()</td>
-<td align="center">返回文件当前位置</td>
-</tr>
-<tr>
-<td align="center">file.truncate([size])</td>
-<td align="center">从文件的首行首字符开始截断，截断文件为 size 个字符，无 size 表示从当前位置截断；截断之后后面的所有字符被删除，其中 Widnows 系统下的换行代表2个字符大小</td>
-</tr>
-<tr>
-<td align="center">file.write(str)</td>
-<td align="center">将字符串写入文件，返回的是写入的字符长度</td>
-</tr>
-<tr>
-<td align="center">file.writelines(sequence)</td>
-<td align="center">向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符</td>
-</tr>
-</tbody></table>
-<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>试图读写文件时，很多地方可能会发生错误。如果你试图打开一个不存在的文件夹， 会得到一个输入输出错误（IOError）：</p>
-<pre><code>&gt;&gt;&gt; fin = open(&apos;bad_file&apos;)
-IOError: [Errno 2] No such file or directory: &apos;bad_file&apos;</code></pre><p>如果你没有权限访问一个文件：</p>
-<pre><code>&gt;&gt;&gt; fout = open(&apos;/etc/passwd&apos;, &apos;w&apos;)
-PermissionError: [Errno 13] Permission denied: &apos;/etc/passwd&apos;</code></pre><p>如果你试图打开一个目录来读取，你会得到：</p>
-<pre><code>&gt;&gt;&gt; fin = open(&apos;/home&apos;)
-IsADirectoryError: [Errno 21] Is a directory: &apos;/home&apos;</code></pre><p>为了避免这些错误，你可以使用类似<code>os.path.exists</code>和<code>os.path.isfile</code>的函数来检查，但这将会耗费大量的时间和代码去检查所有的可能性（从“Errno 21”这个错误信息来看，至少有21种可能出错的情况）。</p>
-<p>更好的办法是在问题出现的时候才去处理，而这正是 try 语句做的事情。 它的语法类似 if…else 语句：</p>
-<pre><code>try:
-    fin = open(&apos;bad_file&apos;)
-except:
-    print(&apos;Something went wrong.&apos;)</code></pre><p>Python 从 try 子句（clause）开始执行。 如果一切正常，那么 except 子句将被跳过。 如果发生异常，则跳出 try 子句，执行 except 子句。</p>
-<p>使用 try 语句处理异常被称为是 捕获（catching） 异常。 在本例中，except 子句打印出一个并非很有帮助的错误信息。 一般来说，捕获异常后你可以选择是否解决这个问题，或者继续尝试运行，又或者至少优雅地结束程序。</p>
-<h2 id="小样例"><a href="#小样例" class="headerlink" title="小样例"></a>小样例</h2><pre><code>#!/usr/bin/python      #告诉Linux/OS 系统这是一个可执行程序，Windows省略
-# -*- coding: utf-8 -*-     #指定字符编码
-‘’‘一机不平何以平天下机
-在进行编程开发的时候，经常会部署各种各样的环境，例如Python的各种库，如果不进行记录的话，时间一久你会       忘记你安装了哪些库，对这些库做了那些修改，这些都不知道。
-那么你就可以创建一个文件夹用来记录这些操作，运行这个程序，输入文件名，文件不存在的话就创建文本记录，存在则追加时间和操作。
-’‘’
-
-import time
-
-filename = input(&quot;请输入文件名称：&quot;);
-time = time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime()) 
-while True:
-    string = input(&quot;请输入输入内容：&quot;)
-    if string==&apos;0&apos;:
-        print(&quot;已写入文件！&quot;)
-        break
-    with open(&quot;%s.txt&quot;%(filename),&quot;a+&quot;) as f :
-        f.write(time+&quot;      &quot;+string+&quot;\n&quot;)
-        f.close()</code></pre><p>查看我的文件结果【/手动狗头】：<br><img src="/images/文稿图片/文件操作-小样例.png" width="80%"></p>
-
+      <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>当我们在进行编程的时候，如果只是按照顺序结构一步一步地写下去，像List那篇文章的小样例一样，那么当存在内容重复的代码块的时候，是不是内容杂冗呢。如果可以把重复的代码块进行命名，当调用的时候，直接调用岂不是简洁明了呢。这时候函数就屁颠屁颠地跑过来说：“你终于想起我了”。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>函数是可重复使用的、用来实现单一或相关联功能的代码段。</p>
+<p>函数能提高应用的模块性、提高程序可读性和代码的重复利用率。Python提供了许多内建函数，比如<code>print()</code>。但你也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>在定义函数的时候，必须遵循Python定义函数的规则，不然会被视为错误：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接函数标识符名称（即函数名）和圆括号 ()。</li>
+<li>任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。</li>
+<li>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。</li>
+<li>函数内容以冒号起始，并且缩进。</li>
+<li>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>def 函数名（参数列表）:
+    函数体</code></pre><h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>在定义函数的时候，我们把参数的名字和位置确定了下来，函数的定义就完成了。对于函数的调用者来说，只需要知道如何传递正确的参数，以及函数将返回什么样的值就够了，函数内部的复杂逻辑被封装起来，调用者无需了解。</p>
+<p>Python的函数定义非常简单，但灵活度是非常大的。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。</p>
+<h3 id="单一位置参数"><a href="#单一位置参数" class="headerlink" title="单一位置参数"></a>单一位置参数</h3><pre><code>def power(x):
+    return x * x</code></pre><p>对于power(x)函数，参数x就是一个位置参数。</p>
+<p>当我们调用power函数时，必须传入有且仅有的一个参数x即可：</p>
+<pre><code>&gt;&gt;&gt; power(2)
+4
+&gt;&gt;&gt; power(10)
+100</code></pre><h3 id="多位置参数"><a href="#多位置参数" class="headerlink" title="多位置参数"></a>多位置参数</h3><pre><code>def power(x, n=2):
+s = 1
+while n &gt; 0:
+    n = n - 1
+    s = s * x
+return s</code></pre><p>对于这个求x的n次幂函数，其间涉及到了默认参数，当仅传入一个参数时，是返回x的平方，当传入两个参数时返回x的n次幂。</p>
+<pre><code>&gt;&gt;&gt; power(2)
+4
+&gt;&gt;&gt; power(2,3)
+8</code></pre><h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数。</p>
+<pre><code>def printinfo_1( a, *b ):
+    &quot;打印任何传入的参数&quot;
+    print (&quot;输出: &quot;)
+    print (a)
+    print (b)
+def printinfo_2( a, **b ):
+    &quot;打印任何传入的参数&quot;
+    print (&quot;输出: &quot;)
+    print (a)
+    print (b)</code></pre><p>其结果为：</p>
+<pre><code>&gt;&gt;&gt;printinfo_1(1)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;printinfo_1(1,2,3)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;(2,3)
+&gt;&gt;&gt;printinfo_2(1)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;printinfo_2(1,a=2,b=3)
+&gt;&gt;&gt;1
+&gt;&gt;&gt;{&apos;a&apos;:2,&apos;b&apos;:3}</code></pre><p>如果细心的话，会发现，由于第二个参数的<code>*</code>的个数导致返回值类型的不同。单是单个<code>*</code>时，除第一个参数正常返回外，多余参数使用元组进行返回；一对<code>*</code>时，在传入参数是加以变量传入，则返回字典形式。</p>
+<h3 id="匿名函数（lambda）"><a href="#匿名函数（lambda）" class="headerlink" title="匿名函数（lambda）"></a>匿名函数（lambda）</h3><p>通过<code>lambda</code>关键字进行链接表达式，使其成为匿名函数，不用再使用<code>def</code>关键字，该函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。</p>
+<pre><code>sum = lambda a,b :a+b
+print(sum(1,2))</code></pre><p>其结果为：</p>
+<pre><code>3</code></pre><h3 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a>return语句</h3><p>一些函数具有返回数据的作用，return [表达式] 语句用于退出函数，选择性地向调用方返回一个表达式。不带参数值的return语句返回None。</p>
+<pre><code>def function(a):
+    result = a+1;
+    print(&quot;函数内&quot;，result)
+result = function(10)+1
+printf(&quot;函数外&quot;，result)</code></pre><p>其结果为：</p>
+<pre><code>函数内 :  11
+函数外 :  12</code></pre><h2 id="小样例"><a href="#小样例" class="headerlink" title="小样例"></a>小样例</h2><pre><code>#!/usr/bin/python      
+# -*- coding: utf-8 -*-     
+&apos;&apos;&apos;打印文件列表&apos;&apos;&apos;
+import os
+def print_filelist(path):
+    &quot;&quot;&quot;传入一个文件路径，打印该路径下的所有文件和文件夹&quot;&quot;&quot;
+    try:
+        files = os.listdir(path)
+        for file in files:
+            print(file)
+    except:
+        print(&quot;输入路径不存在&quot;)
+if __name__==&quot;__main__&quot;:
+    path = input(&quot;请输入文件路径:&quot;)
+    print_filelist(path)</code></pre><p>我们可以看下结果：</p>
+<pre><code>请输入文件路径:/
+initrd.img
+sys
+var
+initrd.img.old
+data
+lib32
+sbin
+run
+boot
+opt
+lost+found
+.unionfs-fuse
+vmlinuz.old
+lib
+bin
+.__deepin.db
+usr
+libx32
+etc
+home
+media
+lib64
+proc
+root
+srv
+mnt
+vmlinuz
+lastore
+dev
+tmp</code></pre>
       
       <!-- reward -->
       
@@ -333,7 +273,7 @@ while True:
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/mourenwang/mourenwang.github.io/upload/2020/03/25/%E6%96%87%E4%BB%B6/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/mourenwang/mourenwang.github.io/upload/2020/03/31/%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,19 +289,10 @@ while True:
   
   <nav class="article-nav">
     
-      <a href="/2020/03/31/%E5%87%BD%E6%95%B0/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            函数
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/03/17/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8Bdictionary/" class="article-nav-link">
+      <a href="/2020/03/25/%E6%96%87%E4%BB%B6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">基础数据类型之dictionary</div>
+        <div class="article-nav-title">文件</div>
       </a>
     
   </nav>
